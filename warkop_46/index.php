@@ -1,8 +1,14 @@
+<!-- Codingan koneksi php -->
 <?php
-    $conn = mysqli_connect('localhost', 'root', '', 'db_warkop');
-    if ($conn) {
-        echo "Koneksi Berhasil";
-    }
+include 'koneksi.php';
+
+// script untuk mengakses mysql menggunakan query
+$query = "SELECT * FROM warkop_46;";
+$sql = mysqli_query($conn, $query);
+
+// while ($result = mysqli_fetch_assoc($sql)) {
+//     echo $result['produk']."<br>";
+// }
 ?>
 
 <!DOCTYPE html>
@@ -49,11 +55,14 @@
             <i class="fa fa-plus"></i>
             Tambah Data
         </a>
+        <!-- Tabel -->
         <div class="table-responsive">
             <table class="table align-middle table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th><center>No.</center></th>
+                        <th>
+                            <center>No.</center>
+                        </th>
                         <th>Produk</th>
                         <th>Harga</th>
                         <th>Foto</th>
@@ -64,31 +73,52 @@
                 </thead>
                 <tbody>
                     <!-- Sanger -->
-                    <tr>
-                        <td><center>1.</center></td>
-                        <td>Sanger</td>
-                        <td>10000</td>
-                        <td>
-                            <center>
-                                <img src="img/Sanger.jpg" style="width: 150px">
-                            </center>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="kelola.php?ubah=1" type="button" class="btn btn-success btn-sm">
-                                <i class="fa fa-pencil"></i>
-                                Ubah
-                            </a>
-                            <a href="proses.php?hapus=1" type="button" class="btn btn-danger btn-sm">
-                                <i class="fa fa-trash"></i>
-                                Hapus
-                            </a>
+                    <?php
+                    while ($result = mysqli_fetch_assoc($sql)) {
+                        ?>
+                        <tr>
+                            <td>
+                                <center>
+                                    <?php
+                                    echo $result['nomor belanja'];
+                                    ?>.
+                                </center>
+                            </td>
+                            <td>
+                                <?php
+                                echo $result['produk'];
+                                ?>.
+                            </td>
+                            <td>
+                                <?php
+                                echo $result['harga'];
+                                ?>.
+                            </td>
+                            <td>
+                                <center>
+                                    <img src="img/Sanger.jpg" style="width: 150px">
+                                </center>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="kelola.php?ubah=1" type="button" class="btn btn-success btn-sm">
+                                    <i class="fa fa-pencil"></i>
+                                    Ubah
+                                </a>
+                                <a href="proses.php?hapus=1" type="button" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-trash"></i>
+                                    Hapus
+                                </a>
 
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
+
+                        <?php
+                    }
+                    ?>
                     <!-- Kopi pandan -->
-                    <tr>
+                    <!-- <tr>
                         <td><center>2.</center></td>
                         <td>Kopi Pandan</td>
                         <td>12000</td>
@@ -109,7 +139,7 @@
                                 Hapus
                             </a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
