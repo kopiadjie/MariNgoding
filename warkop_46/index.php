@@ -1,3 +1,10 @@
+<?php
+    $conn = mysqli_connect('localhost', 'root', '', 'db_warkop');
+    if ($conn) {
+        echo "Koneksi Berhasil";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
