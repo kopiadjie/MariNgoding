@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Logo tab -->
+    <link href="icon/icon.png" rel="Tab Icon">
+
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -83,33 +86,34 @@
         </form>
 
         <!-- Button tambahkan data -->
-        <div class="mb-3 row mt-4">
-            <div class="col">
-                <?php
-                if (isset($_GET['ubah'])) {
-                    ?>
-
-                    <button type="submit" name="aksi" value="edit" class="btn btn-primary">
-                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                        Simpan Perubahan
-                    </button>
+        <form action="proses.php>
+            <div class="mb-3 row mt-4">
+                <div class="col">
                     <?php
-                } else {
+                    if (isset($_GET['ubah'])) {
+                        ?>
+                        <button type="submit" name="aksi" value="edit" class="btn btn-primary">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            Simpan Perubahan
+                        </button>
+                        <?php
+                    } else {
+                        ?>
+                        <button type="submit" name="aksi" value="add" class="btn btn-primary">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            Tambahkan
+                        </button>
+                        <?php
+                    }
                     ?>
-                    <button type="submit" name="aksi" value="add" class="btn btn-primary">
-                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                        Tambahkan
-                    </button>
-                    <?php
-                }
-                ?>
-                <a href="index.php" type="button" class="btn btn-danger">
-                    <i class="fa fa-reply" aria-hidden="true"></i>
-                    Batal
-                </a>
+                    <a href="index.php" type="button" class="btn btn-danger">
+                        <i class="fa fa-reply" aria-hidden="true"></i>
+                        Batal
+                    </a>
+                </div>
             </div>
-        </div>
     </div>
+    </form>
 </body>
 
 </html>
