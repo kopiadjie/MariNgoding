@@ -83,11 +83,11 @@
                     <textarea class="form-control" id="kotakPesan" rows="3"></textarea>
                 </div>
             </div>
-        </form>
 
-        <!-- Button tambahkan data -->
-        <form action="proses.php>
-            <div class="mb-3 row mt-4">
+
+            <!-- Button tambahkan data -->
+            <form action="proses.php>
+            <div class=" mb-3 row mt-4">
                 <div class="col">
                     <?php
                     if (isset($_GET['ubah'])) {
@@ -111,9 +111,8 @@
                         Batal
                     </a>
                 </div>
-            </div>
+            </form>
     </div>
-    </form>
 </body>
 
 </html>
