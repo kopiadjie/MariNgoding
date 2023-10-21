@@ -73,10 +73,10 @@
                                 <i class="fa fa-pencil"></i>
                                 Ubah
                             </a>
-                            <button type="button" class="btn btn-danger btn-sm">
+                            <a href="proses.php?hapus=1" type="button" class="btn btn-danger btn-sm">
                                 <i class="fa fa-trash"></i>
                                 Hapus
-                            </button>
+                            </a>
 
                         </td>
                     </tr>
@@ -97,10 +97,10 @@
                                 <i class="fa fa-pencil"></i>
                                 Ubah
                             </a>
-                            <button type="button" class="btn btn-danger btn-sm">
+                            <a href="proses.php?hapus=2" type="button" class="btn btn-danger btn-sm">
                                 <i class="fa fa-trash"></i>
                                 Hapus
-                            </button>
+                            </a>
                         </td>
                     </tr>
                 </tbody>
