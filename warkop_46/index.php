@@ -3,7 +3,7 @@
 include 'koneksi.php';
 
 // script untuk mengakses mysql menggunakan query
-$query = "SELECT * FROM warkop_46;";
+$query = "SELECT * FROM penjualan_barang;";
 $sql = mysqli_query($conn, $query);
 
 // while ($result = mysqli_fetch_assoc($sql)) {
@@ -80,7 +80,7 @@ $sql = mysqli_query($conn, $query);
                             <td>
                                 <center>
                                     <?php
-                                    echo $result['nomor belanja'];
+                                    echo $result['id_barang'];
                                     ?>.
                                 </center>
                             </td>
