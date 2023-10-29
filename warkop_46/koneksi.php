@@ -1,3 +1,5 @@
+<!-- script di bawah ini digunakan di dalam file index.php -->
+
 <?php
     $host = 'localhost';
     $user = 'root';

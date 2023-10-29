@@ -1,14 +1,11 @@
 <!-- Codingan koneksi php -->
 <?php
-include 'koneksi.php';
+    include 'koneksi.php';
 
-// script untuk mengakses mysql menggunakan query
-$query = "SELECT * FROM penjualan_barang;";
-$sql = mysqli_query($conn, $query);
-
-// while ($result = mysqli_fetch_assoc($sql)) {
-//     echo $result['produk']."<br>";
-// }
+    // script untuk mengakses mysql menggunakan query
+    $query = "SELECT * FROM penjualan_barang;";
+    $sql = mysqli_query($conn, $query);
+    $no = 0;
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +62,11 @@ $sql = mysqli_query($conn, $query);
                         </th>
                         <th>Produk</th>
                         <th>Harga</th>
-                        <th>Foto</th>
+                        <th>
+                            <center>
+                                Foto
+                            </center>
+                        </th>
                         <th>Pemasukan</th>
                         <th>Pengeluaran</th>
                         <th>Aksi</th>
@@ -80,33 +81,37 @@ $sql = mysqli_query($conn, $query);
                             <td>
                                 <center>
                                     <?php
-                                    echo $result['id_barang'];
+                                    echo ++ $no;
                                     ?>.
                                 </center>
                             </td>
                             <td>
                                 <?php
                                 echo $result['produk'];
-                                ?>.
+                                ?>
                             </td>
                             <td>
                                 <?php
                                 echo $result['harga'];
-                                ?>.
+                                ?>
                             </td>
                             <td>
                                 <center>
-                                    <img src="img/Sanger.jpg" style="width: 150px">
+                                    <img src="img/<?php
+                                    echo $result['foto_produk'];
+                                    ?>" alt="Gambar Produk" title="Gambar Produk" , style="width:150px;">
                                 </center>
                             </td>
                             <td></td>
                             <td></td>
                             <td>
-                                <a href="kelola.php?ubah=1" type="button" class="btn btn-success btn-sm">
+                                <a href="kelola.php?ubah=<?php echo $result['id_barang'] ?>" type="button"
+                                    class="btn btn-success btn-sm">
                                     <i class="fa fa-pencil"></i>
                                     Ubah
                                 </a>
-                                <a href="proses.php?hapus=1" type="button" class="btn btn-danger btn-sm">
+                                <a href="proses.php?hapus=" <?php echo $result['id_barang'] ?> type="button"
+                                    class="btn btn-danger btn-sm">
                                     <i class="fa fa-trash"></i>
                                     Hapus
                                 </a>
@@ -117,29 +122,6 @@ $sql = mysqli_query($conn, $query);
                         <?php
                     }
                     ?>
-                    <!-- Kopi pandan -->
-                    <!-- <tr>
-                        <td><center>2.</center></td>
-                        <td>Kopi Pandan</td>
-                        <td>12000</td>
-                        <td>
-                            <center>
-                                <img src="img/Kopi pandan.jpg" style="width: 150px">
-                            </center>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="kelola.php?ubah=2" type="button" class="btn btn-success btn-sm">
-                                <i class="fa fa-pencil"></i>
-                                Ubah
-                            </a>
-                            <a href="proses.php?hapus=2" type="button" class="btn btn-danger btn-sm">
-                                <i class="fa fa-trash"></i>
-                                Hapus
-                            </a>
-                        </td>
-                    </tr> -->
                 </tbody>
             </table>
         </div>
