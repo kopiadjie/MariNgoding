@@ -30,12 +30,14 @@
 
         <!-- Form -->
         <form method="POST" action="proses.php">
+
+            <!-- Produk -->
             <div class="mb-3 row">
                 <label for="produk" class="col-sm-2 col-form-label">
                     Produk
                 </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="produk" placeholder="Contoh: Sanger">
+                    <input type="text" class="form-control" name="produk" id="produk" placeholder="Contoh: Sanger">
                 </div>
             </div>
 
@@ -45,7 +47,7 @@
                     Harga
                 </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Harga" placeholder="Contoh: Harga">
+                    <input type="text" class="form-control" name="harga" id="Harga" placeholder="Contoh: Harga">
                 </div>
             </div>
 
@@ -55,7 +57,7 @@
                     Metode Bayar
                 </label>
                 <div class="col-sm-10">
-                    <select class="form-select">
+                    <select class="form-select" name="metode_bayar" >
                         <option selected>Pilih menu pembayaran</option>
                         <option value="1">Tunai</option>
                         <option value="2">Transfer Bank</option>
@@ -72,7 +74,7 @@
             <div class="col-sm-10">
                 <input class="form-control" type="file" id="buktiBayar">
             </div>
-        </div> -->
+            </div> -->
 
             <!-- Form masukkan pesan -->
             <div class="mb-3 row">
@@ -80,7 +82,7 @@
                     Masukkan Pesan
                 </label>
                 <div class="col-sm-5">
-                    <textarea class="form-control" id="kotakPesan" rows="3"></textarea>
+                    <textarea class="form-control" name="masukkan_pesan" id="kotakPesan" rows="3"></textarea>
                 </div>
             </div>
 
