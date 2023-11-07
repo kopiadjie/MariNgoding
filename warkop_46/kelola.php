@@ -43,7 +43,7 @@
 
             <!-- Harga -->
             <div class="mb-3 row">
-                <label for="Harga" class="col-sm-2 col-form-label">
+                <label for="harga" class="col-sm-2 col-form-label">
                     Harga
                 </label>
                 <div class="col-sm-10">
@@ -57,7 +57,7 @@
                     Metode Bayar
                 </label>
                 <div class="col-sm-10">
-                    <select class="form-select" name="metode_bayar" >
+                    <select class="form-select" name="pilih" >
                         <option selected>Pilih menu pembayaran</option>
                         <option value="1">Tunai</option>
                         <option value="2">Transfer Bank</option>
@@ -65,16 +65,6 @@
                     </select>
                 </div>
             </div>
-
-            <!-- Bukti Bayar -->
-            <!-- <div class="mb-3 row">
-            <label for="buktiBayar" class="col-sm-2 col-form-label">
-                Bukti Bayar
-            </label>
-            <div class="col-sm-10">
-                <input class="form-control" type="file" id="buktiBayar">
-            </div>
-            </div> -->
 
             <!-- Form masukkan pesan -->
             <div class="mb-3 row">

@@ -110,8 +110,8 @@
                                     <i class="fa fa-pencil"></i>
                                     Ubah
                                 </a>
-                                <a href="proses.php?hapus="<?php echo $result['id_barang'] ?> type="button"
-                                    class="btn btn-danger btn-sm">
+                                <a href="proses.php?hapus=<?php echo $result['id_barang'] ?>" type="button"
+                                    class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut??')">
                                     <i class="fa fa-trash"></i>
                                     Hapus
                                 </a>
@@ -119,7 +119,7 @@
                             </td>
                         </tr>
 
-                        <?php
+                    <?php
                     }
                     ?>
                 </tbody>

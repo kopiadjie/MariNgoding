@@ -7,9 +7,9 @@
                 $produk = $_POST['produk'];
                 $harga = $_POST['harga'];
                 $foto = "Sanger.jpg";
-                // $metode_bayar = $_POST['metode_bayar'];
+                $metode_bayar = $_POST['pilih'];
 
-                $query = "INSERT INTO penjualan_barang VALUES(null, '$produk', '$harga', '$foto', null, null)";
+                $query = "INSERT INTO penjualan_barang VALUES(null, '$produk', '$harga', '$foto', '$metode_bayar', null)";
                 $sql = mysqli_query($conn, $query);
 
                 if ($sql) {
@@ -29,8 +29,8 @@
         }
 
         if (isset($_GET['hapus'])) {
-            $id_pesanan = $_GET['hapus'];
-            $query = "DELETE FROM penjualan_barang WHERE id_pesanan = '$id_pesanan';";
+            $id_barang = $_GET['hapus'];
+            $query = "DELETE FROM penjualan_barang WHERE id_barang = '$id_barang';";
             $sql = mysqli_query($conn, $query);
 
             if ($sql) {
