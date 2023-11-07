@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2023 at 03:19 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Waktu pembuatan: 07 Nov 2023 pada 11.25
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,51 +18,56 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_warung`
+-- Database: `db_warkop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penjualan_barang`
+-- Struktur dari tabel `penjualan_barang`
 --
 
 CREATE TABLE `penjualan_barang` (
   `id_barang` int(11) NOT NULL,
   `produk` varchar(12) NOT NULL,
   `harga` int(8) NOT NULL,
-  `foto_produk` varchar(11) NOT NULL,
+  `foto_produk` varchar(50) NOT NULL,
   `pemasukan` int(8) DEFAULT NULL,
   `pengeluaran` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `penjualan_barang`
+-- Dumping data untuk tabel `penjualan_barang`
 --
 
 INSERT INTO `penjualan_barang` (`id_barang`, `produk`, `harga`, `foto_produk`, `pemasukan`, `pengeluaran`) VALUES
-(4, 'sanger', 10000, '', NULL, NULL),
-(5, 'kopi pandan', 12000, '', NULL, NULL);
+(1, 'Kopi Sanger', 9000, 'Sanger.jpg', NULL, NULL),
+(2, 'Kopi Pandan', 12000, 'Kopipandan.jpg', NULL, NULL),
+(3, 'Manis Dingin', 5000, 'Manis Dingin.jpg', NULL, NULL),
+(7, 'Sanger', 10000, 'Sanger.jpg', NULL, NULL),
+(8, 'Sanger', 10000, 'Sanger.jpg', NULL, NULL),
+(9, 'Kopi ', 10000, 'Sanger.jpg', NULL, NULL),
+(10, 'Kolak Dingin', 5000, 'Sanger.jpg', NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `penjualan_barang`
+-- Indeks untuk tabel `penjualan_barang`
 --
 ALTER TABLE `penjualan_barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `penjualan_barang`
+-- AUTO_INCREMENT untuk tabel `penjualan_barang`
 --
 ALTER TABLE `penjualan_barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
